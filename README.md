@@ -31,7 +31,7 @@ _________________________________________________________________
 _________________________________________________________________
 ## Pseudo Code for MVP User Stories
 
-### to see a 4X4 grid of clickable cards.
+### As a user, I want to see a 4X4 grid of clickable cards.
 * Hold each card in a <div> inside of a <main>. Each div will have its own id so it can be identified (e.g. 'card1', 'card2' etc.). 
 * All cards will have the class of '.card-content'.
 
