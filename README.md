@@ -16,7 +16,7 @@ _________________________________________________________________
 
 This is what the game will look like:
 
-![alt Wireframe (wireframe.png "Wireframe")]
+![alt Wireframe](wireframe.png "Wireframe")
 _________________________________________________________________
 ## MVP User Stories
 * As a user, I want to see a 4X4 grid of clickable cards.
