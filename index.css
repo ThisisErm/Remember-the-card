@@ -12,13 +12,13 @@ body {
     width: 100px;
   }
 
-  .grid-item {
+  .card-content {
     border: 1px solid black;
     width: 100px;
     height: 120px;
   }
 
-  .grid-item img {
+  .card-content img {
     border: 1px solid black;
     width: 100px;
     height: 120px;
@@ -32,6 +32,10 @@ body {
   button {
     display: block;
     margin: auto;
+}
+
+#results {
+font-weight: bold;
 }
 
 .hidden {
