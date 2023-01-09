@@ -156,4 +156,4 @@ cards.forEach(card => {
       })
     }
   })
-})
+}) 
