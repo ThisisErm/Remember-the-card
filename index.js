@@ -157,4 +157,3 @@ cards.forEach(card => {
     }
   })
 })
-
