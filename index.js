@@ -5,6 +5,7 @@ let goodGuess = 0
 let badGuess = 0
 let attempts = 5
 //Store card clicks here
+let Arr1 =[]
 let card1 
 let card2 
 //button
@@ -32,37 +33,48 @@ playButton.addEventListener('click', () => {
   cards.forEach(card => {
   card.querySelector('img').style.display = 'none'
   card.classList.remove('clicked')
+  card.classList.remove('matched')
+  card.classList.remove('clicked')
+
   })
 })
 
-//Check for card matches
-function checkMatch() {
-    if (card1 == card2) {
-    results.innerHTML = 'Match :)'
-  } else {
-    results.innerHTML = `No Match. You have ${attempts} attempts left`
-  }
-}
-
 
 //Add 'matched' class if match
-function resetClicksMatch() {
+function addMatch() {
   if (card1 == card2) {
     document.getElementById(card1).classList.add('matched')
     document.getElementById(card2).classList.add('matched')
     card1 = null
     card2 = null
-  }
+  }  
+}
+
+//Add 'unmatched' class if cards don't match
+function noMatch(){
+  if(card1 != card2){
+    document.getElementById(card1).querySelector('img').classList.add('noMatch')
+    document.getElementById(card2).querySelector('img').classList.add('noMatch')
+}}
+
+//Check for card matches
+function checkMatch() {
+  if (card1 == card2) {
+  results.innerHTML = 'Match :)'
+} else {
+  results.innerHTML = `No Match. You have ${attempts} attempts left`
+  noMatch()
+}
 }
 
 // // //Hide cards if they don't match
 function hideUnmatched() {
-  // only hide the images of the first and second cards if they don't have the 'matched' class
-  if (!document.getElementById(card1).classList.contains('matched') && !document.getElementById(card2).classList.contains('matched')) {
-    document.getElementById(card1).querySelector('img').style.display = 'none'
-    document.getElementById(card2).querySelector('img').style.display = 'none'
-  }
-  // reset clicks for next turn
+  if (Arr1[0] != Arr1[1]) {
+    cards.forEach(card => {
+    if (!card.classList.contains('matched'))
+    card.querySelector('img').style.display = 'none'
+  }) 
+}
   card1 = null
   card2 = null
 }
@@ -86,13 +98,6 @@ function reduceAttempts(){
   }
 }
 
-// function disableCards() {
-//     cards.forEach(card => {
-//     cards.classList.add('clicked')
-//       console.log('this func ran')
-//     })
-//   }
-
 
 //Win the game
 function winGame(){
@@ -101,9 +106,6 @@ function winGame(){
   card.querySelector('img').style.display = 'block'
   })
   results.innerHTML = 'Congratulations. You win!'
-
-  // gameGrid.style.display = 'none'
-  disableCards()
 } 
 } 
 
@@ -127,7 +129,8 @@ cards.forEach(card => {
     card.classList.add('clicked');
     // show the image when the card is clicked
     card.querySelector('img').style.display = 'block'
-    // grab the ID of first & second card clicked
+    
+    // grab the ID of first & second card clicked     
     if (!card1) {
       card1 = card.getAttribute('id')
     } else {
@@ -135,12 +138,18 @@ cards.forEach(card => {
     }
     // Run functions after 2 clicks
     if (card1 && card2) {
+    
+    //push cards clicked into Array
+      Arr1.push(card1)
+      Arr1.push(card2)
+
       reduceAttempts()
       checkMatch()
-      resetClicksMatch()
+      addMatch()
       if (card1 != card2) {
         setTimeout(hideUnmatched, 0700)
       }
+      
       grabResults()
       winGame()
       loseGame()
