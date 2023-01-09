@@ -10,10 +10,10 @@ _________________________________________________________
 
 This is what the game will look like:
 
-![alt Screenshot1](screenshot1.png "screenthot1")
-![alt Screenshot1](screenshot2.png "screenthot2")
-![alt Screenshot1](screenshot3.png "screenthot3")
-![alt Screenshot1](screenshot4.png "screenthot4")
+![alt screenshot1](screenshot1.png "screenthot1")
+![alt screenshot1](screenshot2.png "screenthot2")
+![alt screenshot1](screenshot3.png "screenthot3")
+![alt screenshot1](screenshot4.png "screenthot4")
 
 _________________________________________________________________
 ## Getting Started
