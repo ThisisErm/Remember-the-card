@@ -13,13 +13,6 @@ const playButton = document.querySelector('.play-button')
 const winButton = document.querySelector('.win-button')
 const loseButton = document.querySelector('.lose-button')
 
-//win test
-winButton.addEventListener('click', () => {
-  goodGuess=8
-  winGame()
-  console.log('button clicked')
-})
-
 
 // restart game
 playButton.addEventListener('click', () => {
@@ -33,8 +26,8 @@ playButton.addEventListener('click', () => {
   cards.forEach(card => {
   card.querySelector('img').style.display = 'none'
   card.classList.remove('clicked')
-  card.classList.remove('matched')
-  card.classList.remove('clicked')
+  // card.classList.remove('matched')
+  Arr1 = []
 
   })
 })
@@ -42,9 +35,10 @@ playButton.addEventListener('click', () => {
 
 //Add 'matched' class if match
 function addMatch() {
-  if (card1 == card2) {
+  if (card1 === card2) {
     document.getElementById(card1).classList.add('matched')
     document.getElementById(card2).classList.add('matched')
+    
     card1 = null
     card2 = null
   }  
@@ -55,6 +49,7 @@ function noMatch(){
   if(card1 != card2){
     document.getElementById(card1).querySelector('img').classList.add('noMatch')
     document.getElementById(card2).querySelector('img').classList.add('noMatch')
+    
 }}
 
 //Check for card matches
@@ -70,14 +65,14 @@ function checkMatch() {
 // // //Hide cards if they don't match
 function hideUnmatched() {
   if (Arr1[0] != Arr1[1]) {
-    cards.forEach(card => {
-    if (!card.classList.contains('matched'))
-    card.querySelector('img').style.display = 'none'
-  }) 
-}
+    document.getElementById(card1).querySelector('img').style.display='none'
+    document.getElementById(card2).querySelector('img').style.display='none'
+  }
   card1 = null
   card2 = null
 }
+  
+
      
 //Record good & bad guesses into variables 
   grabResults = function(){
@@ -104,9 +99,10 @@ function winGame(){
   if (goodGuess > 7) {
   cards.forEach(card => {
   card.querySelector('img').style.display = 'block'
+  card.classList.add('clicked')
   })
   results.innerHTML = 'Congratulations. You win!'
-} 
+    }
 } 
 
 
