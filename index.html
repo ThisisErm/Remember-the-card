@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remember The Card: A Memory Game</title>
 </head>
-<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="index.css"><!-- css link goes into the head tag -->
 <body>
     <h1>Remember the Card</h1>
     <h2>A Memory Game</h2>
@@ -14,13 +14,13 @@
     <h3>Instructions:</h3>
     <p>The game's objective is to match each card on the grid to its counterpart. Click on any card to reveal its content. Then click on the card you believe will be the same. Clicking on 2 cards counts as 1 attempt. If after 5 attempts you have not found a matching card, you lose the game. Match all 16 cards and you win. Good luck!</p> 
 </div>
-    <button type="button" class = 'play-button'>Play/Restart</button>  
+    <button type="button" class = 'play-button'>Play/Restart</button>  <!-- must use double quotes here for class -->
     <br>
-    <main class='game-grid'>
+    <main class='game-grid'> <!-- must use double quotes here for class -->
         <div id= 'card 1' class="card-content">
             <img src="card-image.jpg" alt="Card Image" class="hidden">
         </div>
-        <div id= 'card 2' class="card-content">
+        <div id= 'card 2' class="card-content"> <!-- html wants double quotes, also, you mix double nd single in here a lot, if this was a js file i would tell you to pick one and stick with it  -->
             <img src="card-image2.jpg" alt="Card Image" class="hidden">
         </div>
         <div id= 'card 3' class="card-content">
@@ -66,7 +66,7 @@
             <img src="card-image8.jpg" alt="Card Image" class="hidden">
         </div>
     </main> 
-      <br>
+      <br><!-- half way indented - shouldn't be indented past the 1st tab -->
     <div id ='results'>
     </div>
 </body>
